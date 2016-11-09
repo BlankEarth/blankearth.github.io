@@ -163,7 +163,9 @@ assignMarkers(function(item){
 	  console.log(retrievedMarkerMappings)	
     for(var i = 0;i<=keys.length;i++){
 	  for(var j = 0;j<markerMappings[keys[i]];j++){
-	     if((JSON.parse(JSON.stringify(markerMappings[keys[i]][j])) == JSON.parse(JSON.stringify(retrievedMarkerMappings[keys[i]][j]))) == false){
+		  console.log(markerMappings[keys[i]][j]['properties']['status'])
+		  console.log(retrievedMarkerMappings[keys[i]][j]['properties']['status'])
+	     if((markerMappings[keys[i]][j]['properties']['status'] == retrievedMarkerMappings[keys[i]][j]['properties']['status'] ) == false){
 			 toastr.info("Modified status at way category"+keys[i] )
 		 }
 	  }
