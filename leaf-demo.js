@@ -153,8 +153,19 @@ assignMarkers(function(item){
    })
   
   database.ref('/').on('value',function(snapshot){
-    markerMappings = snapshot.val()
+    retrievedMarkerMappings = snapshot.val()
     toastr.info("Data synced from the server")
+    
+    var keys = Object.keys(markerMappings)
+    for(var i = 0;i<=leys.length;i++){
+	  for(var j = 0;j<markerMappings[keys[i]];j++){
+	     if((markerMappings[keys[i]][j] == retrievedMarkerMappings[keys[i]][j]) == false){
+			 toastr.info("Modified status at way category"+keys[i] )
+		 }
+	  }
+    }
+    
+    markerMappings = retrievedMarkerMappings    
     $("#panel").trigger('click')
   })
   
