@@ -162,7 +162,7 @@ assignMarkers(function(item){
 	  console.log("Retrived")
 	  console.log(retrievedMarkerMappings)	
     for(var i = 0;i<=keys.length;i++){
-	  for(var j = 0;j<markerMappings[keys[i]];j++){
+	  for(var j = 0;j<markerMappings[keys[i]].length;j++){
 		  console.log(markerMappings[keys[i]][j]['properties']['status'])
 		  console.log(retrievedMarkerMappings[keys[i]][j]['properties']['status'])
 	     if((markerMappings[keys[i]][j]['properties']['status'] == retrievedMarkerMappings[keys[i]][j]['properties']['status'] ) == false){
