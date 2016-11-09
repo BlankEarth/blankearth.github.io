@@ -1,3 +1,6 @@
+toastr.options.closeMethod = 'fadeOut';
+toastr.options.closeDuration = 3000;
+
 var map = L.map( 'map', {
   center: [46.0, 25.0],
   minZoom: 2,
@@ -156,17 +159,17 @@ assignMarkers(function(item){
     retrievedMarkerMappings = snapshot.val()
     toastr.info("Data synced from the server")
     
-    var keys = Object.keys(markerMappings)
+      arr_keys = Object.keys(retrievedMarkerMappings)
       console.log("Marker mappings")
 	  console.log(markerMappings)
 	  console.log("Retrived")
-	  console.log(retrievedMarkerMappings)	
-    for(var i = 0;i<=keys.length;i++){
-	  for(var j = 0;j<markerMappings[keys[i]].length;j++){
-		  console.log(markerMappings[keys[i]][j]['properties']['status'])
-		  console.log(retrievedMarkerMappings[keys[i]][j]['properties']['status'])
-	     if((markerMappings[keys[i]][j]['properties']['status'] == retrievedMarkerMappings[keys[i]][j]['properties']['status'] ) == false){
-			 toastr.info("Modified status in category "+keys[i]+ " at way id " + j + " with status" +  retrievedMarkerMappings[keys[i]][j]['properties']['status'])
+	  console.log(retrievedMarkerMappings)
+	  console.log("Keys")
+	  console.log(arr_keys)	
+    for(var i = 0;i<arr_keys.length;i++){
+	  for(var j = 0;j<retrievedMarkerMappings[arr_keys[i]].length;j++){
+	     if((markerMappings[arr_keys[i]][j]['properties']['status'] == retrievedMarkerMappings[arr_keys[i]][j]['properties']['status'] ) == false){
+			 toastr.info("Modified status in category "+arr_keys[i]+ " at way id " + j + " with status " +  retrievedMarkerMappings[arr_keys[i]][j]['properties']['status'])
 		 }
 	  }
     }
