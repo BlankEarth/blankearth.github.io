@@ -157,11 +157,11 @@ assignMarkers(function(item){
     toastr.info("Data synced from the server")
     
     var keys = Object.keys(markerMappings)
-    for(var i = 0;i<=keys.length;i++){
-	  console.log("Marker mappings")
+      console.log("Marker mappings")
 	  console.log(markerMappings)
 	  console.log("Retrived")
 	  console.log(retrievedMarkerMappings)	
+    for(var i = 0;i<=keys.length;i++){
 	  for(var j = 0;j<markerMappings[keys[i]];j++){
 	     if((JSON.parse(JSON.stringify(markerMappings[keys[i]][j])) == JSON.parse(JSON.stringify(retrievedMarkerMappings[keys[i]][j]))) == false){
 			 toastr.info("Modified status at way category"+keys[i] )
