@@ -166,7 +166,7 @@ assignMarkers(function(item){
 		  console.log(markerMappings[keys[i]][j]['properties']['status'])
 		  console.log(retrievedMarkerMappings[keys[i]][j]['properties']['status'])
 	     if((markerMappings[keys[i]][j]['properties']['status'] == retrievedMarkerMappings[keys[i]][j]['properties']['status'] ) == false){
-			 toastr.info("Modified status at way category"+keys[i] )
+			 toastr.info("Modified status in category "+keys[i]+ " at way id " + j + " with status" +  retrievedMarkerMappings[keys[i]][j]['properties']['status'])
 		 }
 	  }
     }
