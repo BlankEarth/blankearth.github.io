@@ -64,6 +64,7 @@ var assignMarkers = function(callback){
 
   var promise = retrieveData('/')
   promise.then(function(item){
+	toastr.success("Initial data loaded")  
     markerLayerMappings = item.val()
     callback(markerLayerMappings)
   })
@@ -153,6 +154,7 @@ assignMarkers(function(item){
   
   database.ref('/').on('value',function(snapshot){
     markerMappings = snapshot.val()
+    toastr.info("Data synced from the server")
     $("#panel").trigger('click')
   })
   
